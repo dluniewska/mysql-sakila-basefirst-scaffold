@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using mysql_database.sakila;
 
-namespace mysql_database.sakila;
+namespace mysql_database.Data;
 
 public partial class SakilaContext : DbContext
 {

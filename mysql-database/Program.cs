@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using mysql_database.sakila;
+using mysql_database.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
