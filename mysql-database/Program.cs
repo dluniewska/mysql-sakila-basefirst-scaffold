@@ -13,6 +13,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SakilaContext>(options =>
 {
     options.UseMySQL(builder.Configuration.GetConnectionString("mysql_sakila"));
+    options.EnableSensitiveDataLogging();
+    options.EnableDetailedErrors();
+});
+
+builder.Services.AddDbContext<CatsContext>(options =>
+{
+    options.UseMySQL(builder.Configuration.GetConnectionString("cats"));
+    options.EnableSensitiveDataLogging();
+    options.EnableDetailedErrors();
 });
 
 var app = builder.Build();

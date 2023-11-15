@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using mysql_database.Data;
 using mysql_database.sakila;
 
 namespace mysql_database.Controllers
@@ -55,6 +56,8 @@ namespace mysql_database.Controllers
             }
 
             _context.Entry(actor).State = EntityState.Modified;
+
+            actor.LastUpdate = DateTime.UtcNow;
 
             try
             {
