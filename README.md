@@ -4,6 +4,7 @@
 
 #### New challenges
 
+## 1.
 1. Had to install and configure MySql and MySQL Workbench. Checked options to download test databases, world and sakila
 2. Chosen scafolding using console command. Already had dotnet, but had to install new tool with:
 ```
@@ -17,3 +18,15 @@ I installed package _MySql.EntityFrameworkCore_ with version 7.0.10, which was t
 
 
 Scafolding was fast and easy. Only changed configuration of database connection string to Program.cs because i like it that way. All files was created in one folder named "sakila", so I think it needs a little architecture upgrade.
+
+## 2.
+
+1. Problem with PUT on actor. Scaffolded controller for simpler object and PUT worked. I suspected that can be problem with relations or DateTime.
+2. Created Model and DbContext for cats, with simple cat model containing date as birthday. Used CLI to create migration (had to specify migrations output for context) and succesfully updated database by specifying context:
+
+```
+dotnet ef migrations add InitialCats --context CatsContext --output-dir Migrations/CatsMigrations
+dotnet ef database update --context CatsContext
+```
+
+Interestingly, i have admin user and misspelled word cat, and it created new schema and created table in it.
